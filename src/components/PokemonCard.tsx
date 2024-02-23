@@ -1,6 +1,13 @@
-export const PokemonCard = () => {
-  const pokemon = pokemonList[0];
+interface PokemonCardProps {
+  pokemon: {
+    name: string;
+    imgSrc?: string;
+  };
+}
 
+export const PokemonCard = (props: PokemonCardProps) => {
+  console.log(props);
+  const { pokemon } = props;
   return (
     <figure>
       {pokemon.imgSrc ? (
@@ -12,14 +19,3 @@ export const PokemonCard = () => {
     </figure>
   );
 };
-
-const pokemonList = [
-  {
-    name: "bulbasaur",
-    imgSrc:
-      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
-  },
-  {
-    name: "mew",
-  },
-];
